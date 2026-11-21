@@ -7,14 +7,16 @@ class Sketchybar < Formula
   env :std
   desc "Custom macOS statusbar with shell plugin, interaction and graph support"
   homepage "https://github.com/FelixKratz/SketchyBar"
-  # Upstream v2.24.1 plus one patch: create item windows only where the item is
-  # drawn (cold start 10s -> 0.7s with 142 items on 3 displays). Bump `revision`
-  # and `branch` to a new lazy-item-windows-<version> branch cut from the release tag.
+  # Upstream v2.24.1 plus two patches: create item windows only where the item is
+  # drawn (cold start 10s -> 0.7s with 142 items on 3 displays), and upstream PR #892
+  # (the bar rises above macOS 27's hidden-menu-bar strip so clicks reach it). Bump
+  # `revision` and `branch` to a new lazy-item-windows-<version> branch cut from the release tag.
   url "https://github.com/xicodomingues/SketchyBar.git",
       branch:   "lazy-item-windows-2.24.1",
-      revision: "6af39d7f5ea762e6a8adca2aa69fe82a82f44a49"
+      revision: "5e50e3a11807e0a48009a8acaf61ae976de2698e"
   version "2.24.1"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/xicodomingues/SketchyBar.git", branch: "lazy-item-windows-2.24.1"
 
   def clear_env
